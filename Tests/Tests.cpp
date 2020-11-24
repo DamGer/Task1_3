@@ -21,10 +21,12 @@ void RandomArg()
 
 TEST(testRandomArg, testSinX){
 	const double PI = 3.1415926535;
-	int Arg;
-	Arg = dRand();
+	for (int Arg = 1; Arg <= 180; Arg++) // задаем начальное значение 1, конечное 180 и задаем шаг цикла - 1.
+	{
 	std::cout << std::endl << "Arg = " << Arg << std::endl << std::endl;
 	ASSERT_NEAR(SinX(Arg), sin((Arg % 360) * PI / 180), 0.0001) << "Ошибка";
+	}
+		
 }	
 
 int main(int argc, char** argv)
@@ -36,6 +38,7 @@ int main(int argc, char** argv)
 	std::cout << "Tests" << std::endl << std::endl;
 	RandomArg();
 	
+
 	::testing::InitGoogleTest(&argc, argv);
 	return RUN_ALL_TESTS();
 }
