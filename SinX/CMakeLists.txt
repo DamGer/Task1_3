@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(SinX)
+set(SOURCES SinX.cpp)
+set(HEADERS SinX.h)
+add_library(SinX STATIC ${SOURCES} ${HEADERS})
+target_include_directories(SinX PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
